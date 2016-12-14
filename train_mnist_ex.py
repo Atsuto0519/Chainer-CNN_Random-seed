@@ -9,14 +9,8 @@ import chainer.links as L
 from chainer import training
 from chainer.training import extensions
 
-import cupy
-from cupy import core
-from cupy import cuda
-from cupy.cuda import curand
-
 # set random's seed
 np.random.seed(0)
-#CHAINER_SEED = 0
 
 # Network definition
 class MLP(chainer.Chain):
