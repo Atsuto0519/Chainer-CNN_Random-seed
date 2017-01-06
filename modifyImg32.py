@@ -9,12 +9,6 @@ from chainer.dataset import download
 from chainer.datasets import tuple_dataset
 import matplotlib.pyplot as plt
 
-for i in range(32):
-    im_test.extend(im[i,:])
-    
-im = array(im_test).astype(float32)
-print(im)
-
 
 train, test = chainer.datasets.get_mnist()
 
