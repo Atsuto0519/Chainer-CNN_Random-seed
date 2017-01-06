@@ -9,7 +9,7 @@ from chainer.dataset import download
 from chainer.datasets import tuple_dataset
 import matplotlib.pyplot as plt
 
-
+random.seed(0)
 train, test = chainer.datasets.get_mnist()
 
 print(len(train))
@@ -92,6 +92,7 @@ def _retrieve_img32(name):
 
 def _make_npz_img32(name):
     im, number = get_faceImage_directory(name + '/')
+    random.shuffle(im)
     x = np.empty((number, 1024), dtype=np.uint8)
     y = np.empty(number, dtype=np.uint8)
 
