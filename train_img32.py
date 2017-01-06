@@ -222,6 +222,6 @@ trainer.run()
 
 
 np.random.seed(0)
-model_test = chainer.FunctionSet(l1=L.Linear(n_in, n_units),
-                                 l2=L.Linear(n_units, n_units),
-                                 l3=L.Linear(n_units, n_out))
+model_test = chainer.FunctionSet(l1=L.Linear(1024, args.unit),
+                                 l2=L.Linear(args.unit, args.unit),
+                                 l3=L.Linear(args.unit, 4))
