@@ -9,11 +9,6 @@ from chainer.dataset import download
 from chainer.datasets import tuple_dataset
 import matplotlib.pyplot as plt
 
-im_test = []
-im  = array(Image.open('./faceResize/asai/000000.jpg').convert('L'))
-print(im.shape,im.dtype)
-print(im)
-
 for i in range(32):
     im_test.extend(im[i,:])
     
