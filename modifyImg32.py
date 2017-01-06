@@ -1,5 +1,12 @@
 import chainer
 from chainer import training
+from PIL import Image
+from numpy import *
+import numpy as np
+
+im  = array(Image.open('./faceResize/asai/000000.jpg').convert('L'))
+print(im.shape,im.dtype)
+print(im)
 
 train, test = chainer.datasets.get_mnist()
 
@@ -18,9 +25,21 @@ print()
 import matplotlib.pyplot as plt
 
 
-def draw_image_onlyone(data):
+def draw_image_28(data):
     dimX = 28
     dimY = 28
+    Z = data.reshape(dimY,dimX)   # convert from vector to 28x28 matrix
+    Z = Z[::-1,:]                 # flip vertical
+    plt.xlim(0,dimX)
+    plt.ylim(0,dimY)
+    plt.pcolor(Z)
+    plt.gray()
+    plt.tick_params(labelbottom="off")
+    plt.tick_params(labelleft="off")
+    
+def draw_image_32(data):
+    dimX = 32
+    dimY = 32
     Z = data.reshape(dimY,dimX)   # convert from vector to 28x28 matrix
     Z = Z[::-1,:]                 # flip vertical
     plt.xlim(0,dimX)
@@ -33,6 +52,6 @@ def draw_image_onlyone(data):
 
 index = 7
 print("label=%d" % (train[index][1]))
-draw_image_onlyone(train[index][0])
+draw_image_28(train[index][0])
 plt.show()
 
