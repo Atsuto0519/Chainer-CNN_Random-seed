@@ -9,6 +9,6 @@ mkdir ./groupB/results
 for i in `seq 1 $1`
 do
     echo $i times:
-    python ./groupA/traim_img32.py -b 750 -e 10 -g 0 -o './groupA/result_$i'
-    python ./groupA/traim_img32.py -b 750 -e 10 -g 0 -o './groupB/result_$i'
+    python ./groupA/train_img32.py -b 750 -e 10 -g 0 -o './groupA/result_$i'
+    python ./groupB/train_img32.py -b 750 -e 10 -g 0 -o './groupB/result_$i'
 done
