@@ -4,7 +4,8 @@
 # Please this file in the directory has groupA and groupB.
 # Directorys of groupA and groupB have train_img32.py(stable version) and train/ and test/.
 
-mkdir results
+mkdir ./groupA/results
+mkdir ./groupB/results
 for i in `seq 1 $1`
 do
     echo $i times:
