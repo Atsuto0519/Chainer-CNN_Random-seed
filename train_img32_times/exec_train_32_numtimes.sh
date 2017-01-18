@@ -4,11 +4,22 @@
 # Please this file in the directory has groupA and groupB.
 # Directorys of groupA and groupB have train_img32.py(stable version) and train/ and test/.
 
-mkdir ./groupA/results
-mkdir ./groupB/results
+cd groupA/
+mkdir results
+rm $HOME/.chainer/dataset/pfnet/chainer/img/*
 for i in `seq 1 $1`
 do
     echo $i times:
-    python ./groupA/train_img32.py -b 750 -e 10 -g 0 -o './groupA/result_$i'
-    python ./groupB/train_img32.py -b 750 -e 10 -g 0 -o './groupB/result_$i'
+    python train_img32.py -b 750 -e 10 -o results/result_$i -s $i
+    echo
+done
+
+cd ../groupB/
+mkdir results
+rm $HOME/.chainer/dataset/pfnet/chainer/img/*
+for i in `seq 1 $1`
+do
+    echo $i times:
+    python train_img32.py -b 750 -e 10 -o results/result_$i -s $i
+    echo
 done
