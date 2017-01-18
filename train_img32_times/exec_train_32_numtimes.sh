@@ -7,6 +7,7 @@ mkdir results
 for i in `seq 1 $1`
 do
     echo $i times:
-    python train_img32_numtimes.py -b 750 -e 102 -g 0 -o "results/result_$i" -s `expr $i + $start_seed`
+    python ./groupA/train_img32_numtimes.py -b 750 -e 10 -g 0 -o "./groupA/results/result_$i" -s `expr $i + $start_seed`
+    python ./groupB/train_img32_numtimes.py -b 750 -e 10 -g 0 -o "./groupB/results/result_$i" -s `expr $i + $start_seed`
     echo
 done
