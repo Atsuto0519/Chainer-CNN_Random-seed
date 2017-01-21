@@ -51,6 +51,7 @@ hogehoge = 100
 plt.title(r"main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_A[0])):
     plt.plot(im_A[0][i], color=cm.gray(float(i)/len(im_A[0])))
     hoge = 0

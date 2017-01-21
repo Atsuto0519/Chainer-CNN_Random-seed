@@ -51,6 +51,7 @@ hogehoge = 100
 plt.title(r"main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_A[0])):
     plt.plot(im_A[0][i], color=cm.gray(float(i)/len(im_A[0])))
     hoge = 0
@@ -67,6 +68,7 @@ hogehoge = 0
 plt.title(r"main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_A[1])):
     plt.plot(im_A[1][i], color=cm.gray(float(i)/len(im_A[1])))
     hoge = 0
@@ -83,6 +85,7 @@ hogehoge = 100
 plt.title(r"validation/main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_A[2])):
     plt.plot(im_A[2][i], color=cm.gray(float(i)/len(im_A[2])))
     hoge = 0
@@ -99,6 +102,7 @@ hogehoge = 0
 plt.title(r"all validation/main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_A[3])):
     plt.plot(im_A[3][i], color=cm.gray(float(i)/len(im_A[3])))
     hoge = 0
@@ -114,6 +118,7 @@ print(A_best_validation_main_loss)
 plt.title(r"all best parameters")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 plt.plot(im_A[0][A_best_main_accuracy], color=cm.gray(float(0)/4), label='main/accuracy')
 plt.plot(im_A[1][A_best_main_loss], color=cm.gray(float(1)/4), label='main/loss')
 plt.plot(im_A[2][A_best_validation_main_accuracy], color=cm.gray(float(2)/4), label='validation/main/accuracy')
@@ -126,6 +131,7 @@ hogehoge = 100
 plt.title(r"main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_B[0])):
     plt.plot(im_B[0][i], color=cm.gray(float(i)/len(im_B[0])))
     hoge = 0
@@ -142,6 +148,7 @@ hogehoge = 0
 plt.title(r"main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_B[1])):
     plt.plot(im_B[1][i], color=cm.gray(float(i)/len(im_B[1])))
     hoge = 0
@@ -158,6 +165,7 @@ hogehoge = 100
 plt.title(r"validation/main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_B[2])):
     plt.plot(im_B[2][i], color=cm.gray(float(i)/len(im_B[2])))
     hoge = 0
@@ -174,6 +182,7 @@ hogehoge = 0
 plt.title(r"all validation/main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 for i in range(len(im_B[3])):
     plt.plot(im_B[3][i], color=cm.gray(float(i)/len(im_B[3])))
     hoge = 0
@@ -189,6 +198,7 @@ print(B_best_validation_main_loss)
 plt.title(r"all best parameters")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 plt.plot(im_B[0][B_best_main_accuracy], color=cm.gray(float(0)/4), label='main/accuracy')
 plt.plot(im_B[1][B_best_main_loss], color=cm.gray(float(1)/4), label='main/loss')
 plt.plot(im_B[2][B_best_validation_main_accuracy], color=cm.gray(float(2)/4), label='validation/main/accuracy')
@@ -207,6 +217,7 @@ for i in range(9):
 plt.title(r"all average parameters")
 plt.xlabel('iteration')
 plt.ylabel('value')
+plt.grid(linestyle='--')
 plt.plot(average_value[0], color=cm.gray(float(0)/4), label='main/accuracy')
 plt.plot(average_value[1], color=cm.gray(float(1)/4), label='main/loss')
 plt.plot(average_value[2], color=cm.gray(float(2)/4), label='validation/main/accuracy')
