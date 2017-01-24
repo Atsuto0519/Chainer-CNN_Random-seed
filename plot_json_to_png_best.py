@@ -17,8 +17,8 @@ B_best_validation_main_loss = 0
 hoge = 0
 hogehoge = 0
 
-root_A = './groupA/results/'
-root_B = './groupB/results/'
+root_A = './groupA/results_SGD/'
+root_B = './groupB/results_SGD/'
 dir_count = 0
 im_A = [[],[],[],[]]
 im_B = [[],[],[],[]]
@@ -208,7 +208,8 @@ plt.savefig('B_best_parameter.png')
 plt.show()
 
 average_value = [[],[],[],[]]
-for i in range(9):
+jsonData = json.load(open(root_A + u + '/log', 'r'))
+for i in range(len(jsonData)):
     average_value[0].append((im_A[0][A_best_main_accuracy][i]+im_B[0][B_best_main_accuracy][i])/2)
     average_value[1].append((im_A[1][A_best_main_loss][i]+im_B[1][B_best_main_loss][i])/2)
     average_value[2].append((im_A[2][A_best_validation_main_accuracy][i]+im_B[2][B_best_validation_main_accuracy][i])/2)

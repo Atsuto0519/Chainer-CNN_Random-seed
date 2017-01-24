@@ -47,7 +47,7 @@ for u in os.listdir(root_B):
         im_B[3][dir_count].append(jsonData[i]['validation/main/loss'])
     dir_count += 1
     
-hogehoge = 100
+hogehoge = 0
 plt.title(r"main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -57,14 +57,14 @@ for i in range(len(im_A[0])):
     hoge = 0
     for j in range(len(im_A[0][i])):
         hoge += im_A[0][i][j]
-    if (hoge < hogehoge):
+    if (hoge > hogehoge):
         A_best_main_accuracy = i
         hogehoge = hoge
 plt.savefig('A_main_accuracy.png')
 plt.show()
 print(A_best_main_accuracy)
 
-hogehoge = 0
+hogehoge = 100
 plt.title(r"main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -74,14 +74,14 @@ for i in range(len(im_A[1])):
     hoge = 0
     for j in range(len(im_A[1][i])):
         hoge += im_A[1][i][j]
-    if (hoge > hogehoge):
+    if (hoge < hogehoge):
         A_best_main_loss = i
         hogehoge = hoge
 plt.savefig('A_main_loss.png')
 plt.show()
 print(A_best_main_loss)
 
-hogehoge = 100
+hogehoge = 0
 plt.title(r"validation/main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -91,14 +91,14 @@ for i in range(len(im_A[2])):
     hoge = 0
     for j in range(len(im_A[2][i])):
         hoge += im_A[2][i][j]
-    if (hoge < hogehoge):
+    if (hoge > hogehoge):
         A_best_validation_main_accuracy = i
         hogehoge = hoge
 plt.savefig('A_validation_main_accuracy.png')
 plt.show()
 print(A_best_validation_main_accuracy)
 
-hogehoge = 0
+hogehoge = 100
 plt.title(r"all validation/main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -108,7 +108,7 @@ for i in range(len(im_A[3])):
     hoge = 0
     for j in range(len(im_A[3][i])):
         hoge += im_A[3][i][j]
-    if (hoge > hogehoge):
+    if (hoge < hogehoge):
         A_best_validation_main_loss = i
         hogehoge = hoge
 plt.savefig('A_validation_main_loss.png')
@@ -127,7 +127,7 @@ plt.legend(loc='upper right')
 plt.savefig('A_best_parameter.png')
 plt.show()
 
-hogehoge = 100
+hogehoge = 0
 plt.title(r"main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -137,14 +137,14 @@ for i in range(len(im_B[0])):
     hoge = 0
     for j in range(len(im_B[0][i])):
         hoge += im_B[0][i][j]
-    if (hoge < hogehoge):
+    if (hoge > hogehoge):
         B_best_main_accuracy = i
         hogehoge = hoge
 plt.savefig('B_main_accuracy.png')
 plt.show()
 print(B_best_main_accuracy)
 
-hogehoge = 0
+hogehoge = 100
 plt.title(r"main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -154,14 +154,14 @@ for i in range(len(im_B[1])):
     hoge = 0
     for j in range(len(im_B[1][i])):
         hoge += im_B[1][i][j]
-    if (hoge > hogehoge):
+    if (hoge < hogehoge):
         B_best_main_loss = i
         hogehoge = hoge
 plt.savefig('B_main_loss.png')
 plt.show()
 print(B_best_main_loss)
 
-hogehoge = 100
+hogehoge = 0
 plt.title(r"validation/main/accuracy")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -171,14 +171,14 @@ for i in range(len(im_B[2])):
     hoge = 0
     for j in range(len(im_B[2][i])):
         hoge += im_B[2][i][j]
-    if (hoge < hogehoge):
+    if (hoge > hogehoge):
         B_best_validation_main_accuracy = i
         hogehoge = hoge
 plt.savefig('B_validation_main_accuracy.png')
 plt.show()
 print(B_best_validation_main_accuracy)
 
-hogehoge = 0
+hogehoge = 100
 plt.title(r"all validation/main/loss")
 plt.xlabel('iteration')
 plt.ylabel('value')
@@ -188,7 +188,7 @@ for i in range(len(im_B[3])):
     hoge = 0
     for j in range(len(im_B[3][i])):
         hoge += im_B[3][i][j]
-    if (hoge > hogehoge):
+    if (hoge < hogehoge):
         B_best_validation_main_loss = i
         hogehoge = hoge
 plt.savefig('B_validation_main_loss.png')
@@ -208,7 +208,8 @@ plt.savefig('B_best_parameter.png')
 plt.show()
 
 average_value = [[],[],[],[]]
-for i in range(9):
+jsonData = json.load(open(root_A + u + '/log', 'r'))
+for i in range(jsonData):
     average_value[0].append((im_A[0][A_best_main_accuracy][i]+im_B[0][B_best_main_accuracy][i])/2)
     average_value[1].append((im_A[1][A_best_main_loss][i]+im_B[1][B_best_main_loss][i])/2)
     average_value[2].append((im_A[2][A_best_validation_main_accuracy][i]+im_B[2][B_best_validation_main_accuracy][i])/2)
